@@ -482,11 +482,11 @@ service mmi-boot-sh /system/bin/init.mmi.boot.sh
     group root radio
     oneshot
 
-service mmi-touch-sh /system/bin/init.mmi.touch.sh synaptics
-    class core
-    user root
-    group root system mot_tcmd
-    oneshot
+#service mmi-touch-sh /system/bin/init.mmi.touch.sh synaptics
+#    class core
+#    user root
+#    group root system mot_tcmd
+#    oneshot
 
 on property:ro.secure=0
     # disable dmesg restrict for insecure builds
