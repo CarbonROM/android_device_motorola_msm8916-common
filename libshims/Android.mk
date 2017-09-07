@@ -40,6 +40,7 @@ LOCAL_SRC_FILES := get_process_name.c
 LOCAL_MODULE := libshims_get_process_name
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
+
 # CAMERA
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := atomic.cpp
@@ -48,9 +49,24 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := SensorManager.cpp moto_camera_misc.c
-LOCAL_SHARED_LIBRARIES := libutils libsensor liblog libbinder
-LOCAL_MODULE := libshim_sensorlistener
+
+LOCAL_SRC_FILES := \
+    sensorlistener/ISensorServer.cpp \
+    sensorlistener/SensorManager.cpp
+
+LOCAL_MODULE := libshims_sensorlistener
 LOCAL_MODULE_TAGS := optional
+LOCAL_SHARED_LIBRARIES := \
+    libnativeloader \
+    libbinder \
+    libcutils \
+    libEGL \
+    libGLESv2 \
+    libsync \
+    libui \
+    libutils \
+    liblog \
+    libbase \
+    libsensor
 
 include $(BUILD_SHARED_LIBRARY)
