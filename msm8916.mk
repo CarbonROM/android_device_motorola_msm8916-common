@@ -88,7 +88,7 @@ PRODUCT_PACKAGES += \
     libc_util \
     libshims_camera \
     libshim_atomic  \
-    libshim_sensorlistener
+    libshims_sensorlistener
 
 # Camera properties
 PRODUCT_PROPERTY_OVERRIDES += \
